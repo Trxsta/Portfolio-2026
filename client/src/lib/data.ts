@@ -109,7 +109,7 @@ export const socialLinks = {
   linkedin: "https://www.linkedin.com/in/tristan-goodwin-11b890315",
   instagram: "https://www.instagram.com/iceeviolet_/",
   github: "https://github.com/Trxsta",
-  email: "tristangoodwin065@gmail.com"
+  email: "goodwinz155@gmail.com"
 };
 
 // ─── Extended project types for new sections ─────────────────────────────────

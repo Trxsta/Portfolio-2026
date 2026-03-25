@@ -95,7 +95,7 @@ This project is open source and available under the [MIT License](LICENSE).
 
 ## Contact
 
-- Email: [tristangoodwin065@gmail.com](mailto:tristangoodwin065@gmail.com)
+- Email: [goodwinz155@gmail.com](mailto:goodwinz155@gmail.com)
 - LinkedIn: [Tristan Goodwin](https://www.linkedin.com/in/tristan-goodwin-11b890315)
 - GitHub: [TrizJS](https://github.com/TrizJS)
 - Instagram: [@iceeviolet_](https://www.instagram.com/iceeviolet_/)
