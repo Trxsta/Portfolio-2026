@@ -196,7 +196,10 @@ export const uxUiProjects: ExtendedProject[] = [
     description: "An AR-based music learning concept designed to help beginners interact with instruments virtually. Focuses on accessibility, immersive learning, and UI/UX prototyping.",
     imageUrl: "https://images.unsplash.com/photo-1592478411213-6153e4ebc07d?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80",
     technologies: ["AR", "UI/UX Design", "Accessibility", "Immersive Learning"],
-    links: []
+    links: [
+      { label: "Lo-Fi Ar Prototype", url: "https://www.figma.com/design/wRK9ADgWe6bnaeW9mWIIuK/Mind-Melody-AR-Prototype?node-id=0-1&t=RoEEN1bT5NXTdBkp-1", type: "figma" }
+    ],
+    badge: "In Progress"
   },
   {
     id: 203,
