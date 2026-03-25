@@ -111,3 +111,163 @@ export const socialLinks = {
   github: "https://github.com/Trxsta",
   email: "tristangoodwin065@gmail.com"
 };
+
+// ─── Extended project types for new sections ─────────────────────────────────
+
+export type LinkType = "github" | "live" | "video" | "figma" | "playlist";
+
+export interface ProjectLink {
+  label: string;
+  url: string;
+  type: LinkType;
+}
+
+export interface ExtendedProject {
+  id: number;
+  title: string;
+  description: string;
+  imageUrl: string;
+  technologies: string[];
+  links: ProjectLink[];
+  badge?: string;
+}
+
+export interface CreatorProfile {
+  name: string;
+  description: string;
+  url: string;
+  handle: string;
+}
+
+// ─── Iterative AI Training Projects ──────────────────────────────────────────
+
+export const aiTrainingProjects: ExtendedProject[] = [
+  {
+    id: 101,
+    title: "Travel Wishlist Web App",
+    description: "A full-stack travel wishlist web application built iteratively using AI-assisted development. Focused on backend integration, dynamic data handling, and responsive UI. Demonstrates structured prompting, debugging, and incremental feature development.",
+    imageUrl: "https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80",
+    technologies: ["Full-Stack", "AI-Assisted Development", "Responsive UI", "Backend Integration"],
+    links: [
+      { label: "GitHub Repository (Code + Transcripts)", url: "https://github.com/TrizJS/travel-wishlist", type: "github" },
+      { label: "Live Site", url: "https://travelingwishlist.netlify.app/", type: "live" },
+      { label: "Project Demo (YouTube)", url: "https://youtu.be/v0AIn_vMeHM", type: "video" }
+    ]
+  },
+  {
+    id: 102,
+    title: "AI Training for Music Artist (Sungate Records Internship)",
+    description: "Developed AI-generated visuals, voiceovers, and storytelling for the music artist \"De La Plata.\" Focused on refining prompt accuracy, visual consistency, and artist likeness using tools like Artlist and generative AI workflows.",
+    imageUrl: "https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80",
+    technologies: ["Generative AI", "Visual Storytelling", "Artlist", "Prompt Engineering"],
+    links: [
+      { label: "Music Video (AI Visuals + Voiceover Work)", url: "https://youtu.be/466EzpaBcVI?si=zcscQd_ih3YBfEie", type: "video" }
+    ]
+  },
+  {
+    id: 103,
+    title: "Cozy Corner Cafe (AI + MCP Integration)",
+    description: "An interactive restaurant menu web app built using iterative AI development. Integrated an MCP server to dynamically generate and manage copyright-free AI images. Focused on combining backend logic with AI-generated assets.",
+    imageUrl: "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80",
+    technologies: ["MCP Server", "AI Image Generation", "Web App", "Backend Integration"],
+    links: [
+      { label: "GitHub Repository (Code + Transcripts)", url: "https://github.com/TrizJS/cozy-corner-cafe", type: "github" },
+      { label: "Live Site", url: "https://cozy-corner-cafe-trizjs.netlify.app/", type: "live" }
+    ]
+  }
+];
+
+// ─── UX/UI Research & Immersive Development ──────────────────────────────────
+
+export const uxUiProjects: ExtendedProject[] = [
+  {
+    id: 201,
+    title: "Tune Camp (Figma Prototype)",
+    description: "A music education app prototype focused on user research, usability testing, and iterative design improvements. Developed with a partner using real user feedback and structured UX methodologies.",
+    imageUrl: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80",
+    technologies: ["Figma", "User Research", "Usability Testing", "UX Design"],
+    links: [
+      { label: "Figma Prototype (Tune Camp)", url: "https://www.figma.com/proto/wl1ozi3xKP6zTSkyfzWOaY/Tune-Camp-Prototype?node-id=153-148&starting-point-node-id=153%3A148&t=kK8xtocIBOzNpipD-1", type: "figma" }
+    ]
+  },
+  {
+    id: 202,
+    title: "Mind Melody (AR Music Learning App)",
+    description: "An AR-based music learning concept designed to help beginners interact with instruments virtually. Focuses on accessibility, immersive learning, and UI/UX prototyping.",
+    imageUrl: "https://images.unsplash.com/photo-1592478411213-6153e4ebc07d?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80",
+    technologies: ["AR", "UI/UX Design", "Accessibility", "Immersive Learning"],
+    links: []
+  },
+  {
+    id: 203,
+    title: "Explorlando (Group Project)",
+    description: "A full-stack tourism platform currently in development, combining frontend and backend systems. Includes API development, database integration, debugging, testing, and a physical QR code brochure for real-world interaction.",
+    imageUrl: "https://images.unsplash.com/photo-1503220317375-aaad61436b1b?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80",
+    technologies: ["Full-Stack", "API Development", "Database Integration", "QR Code"],
+    links: [
+      { label: "Figma Hi-Fi Prototype", url: "https://www.figma.com/proto/yacjzEdcNV1Axgq28RVU4X/FLocal-Lo-fi?node-id=209-508&starting-point-node-id=209%3A508&t=J3PmwJ7bYuz9AWce-1", type: "figma" }
+    ],
+    badge: "In Development"
+  },
+  {
+    id: 204,
+    title: "VR Application (In Progress)",
+    description: "Currently developing an immersive VR experience as part of coursework, focusing on interaction design and spatial user experiences.",
+    imageUrl: "https://images.unsplash.com/photo-1478416272538-5f7e51dc5400?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80",
+    technologies: ["VR", "Interaction Design", "Spatial UX", "Coursework"],
+    links: [],
+    badge: "In Progress"
+  }
+];
+
+// ─── Personal Projects: Content Creation & Music Production ──────────────────
+
+export const creatorProfiles: CreatorProfile[] = [
+  {
+    name: "UZICLONE",
+    description: "AI-generated covers, vocal recreation, and music analysis",
+    url: "https://youtube.com/@uziclone?si=2_IlIo7Kypq7ELFN",
+    handle: "@uziclone"
+  },
+  {
+    name: "Icee Violet",
+    description: "Original music, vocal production, mixing, and creative direction",
+    url: "https://youtube.com/@iceeviolet?si=UVJS8twpGwXUVwHg",
+    handle: "@iceeviolet"
+  }
+];
+
+export const contentCreationProjects: ExtendedProject[] = [
+  {
+    id: 301,
+    title: "AI Training & Music Analysis",
+    description: "Recreated full songs from short, low-quality snippets by analyzing vocals, pitch, and structure. Demonstrates advanced listening ability, vocal replication, and content optimization for audience growth.",
+    imageUrl: "https://images.unsplash.com/photo-1470225620780-dba8ba36b745?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80",
+    technologies: ["AI Voice Training", "Music Analysis", "Vocal Replication", "Content Optimization"],
+    links: [
+      { label: "Recreated Song (YouTube)", url: "https://youtu.be/UxXuPwOkc2w", type: "video" },
+      { label: "AI Collaboration Example (100K+ Views)", url: "https://youtu.be/Rivw-NlZvU8?si=eniXfE4R9218FiZB", type: "video" },
+      { label: "Original Snippet Reference", url: "https://youtube.com/shorts/5nQyvQhwzO8?si=2rsFw9mtTleBsnk4", type: "video" }
+    ]
+  },
+  {
+    id: 302,
+    title: "UZICLONE AI Playlist",
+    description: "A curated playlist showing progression of AI voice training over 2 years, highlighting improvements in realism and vocal modeling.",
+    imageUrl: "https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80",
+    technologies: ["AI Voice Training", "Playlist Curation", "Vocal Modeling", "2-Year Progression"],
+    links: [
+      { label: "Full Playlist (YouTube)", url: "https://www.youtube.com/watch?v=npsH8BDdpOc&list=PLuXTkNpzKDnE7Erp-4bt8o8gsuaLdTk0-", type: "playlist" }
+    ]
+  },
+  {
+    id: 303,
+    title: "Advanced AI Voice Model (Recent Work)",
+    description: "Showcases the most recent improvements in AI voice training, with enhanced realism, tone accuracy, and vocal delivery.",
+    imageUrl: "https://images.unsplash.com/photo-1516280440614-37939bbacd81?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80",
+    technologies: ["AI Voice Model", "Tone Accuracy", "Vocal Delivery", "Recent Work"],
+    links: [
+      { label: "Latest Model Example (YouTube)", url: "https://youtu.be/Eg9ceVGgv8A?si=_YlKFOFg65j08sJa", type: "video" }
+    ]
+  }
+];
