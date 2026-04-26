@@ -152,7 +152,7 @@ const Projects = () => {
                     {"isTodoApp" in project && project.isTodoApp && (
                       <div className="mb-4">
                         <a
-                          href="https://drive.google.com/file/d/1ozW12SsCSvCQZHBTz-tpWZYoVvE3PO2a/view?usp=sharing"
+                          href="/todo-app-design.pdf"
                           target="_blank"
                           rel="noreferrer"
                           className="inline-flex items-center px-4 py-2 bg-primary text-white rounded-md hover:bg-blue-700 transition"
