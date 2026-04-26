@@ -165,6 +165,17 @@ export const aiTrainingProjects: ExtendedProject[] = [
     ]
   },
   {
+    id: 104,
+    title: "Thingz To Do",
+    description: "A fully functional task management web app built from the ground up using AI-assisted development, based on the Figma TODO app prototype. Features task creation, deadlines, and a clean responsive UI — bringing the original design concept to life as a working product.",
+    imageUrl: "https://images.unsplash.com/photo-1611224923853-80b023f02d71?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80",
+    technologies: ["Full-Stack", "AI-Assisted Development", "Responsive UI", "Task Management"],
+    links: [
+      { label: "GitHub Repository", url: "https://github.com/Trxsta/TODO-App", type: "github" },
+      { label: "Live Site", url: "https://thingztodo.netlify.app/", type: "live" }
+    ]
+  },
+  {
     id: 103,
     title: "Cozy Corner Cafe (AI + MCP Integration)",
     description: "An interactive restaurant menu web app built using iterative AI development. Integrated an MCP server to dynamically generate and manage copyright-free AI images. Focused on combining backend logic with AI-generated assets.",
