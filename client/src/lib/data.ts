@@ -150,7 +150,7 @@ export const aiTrainingProjects: ExtendedProject[] = [
     technologies: ["Full-Stack", "AI-Assisted Development", "Responsive UI", "Backend Integration"],
     links: [
       { label: "GitHub Repository (Code + Transcripts)", url: "https://github.com/TrizJS/travel-wishlist", type: "github" },
-      { label: "Live Site", url: "https://travelingwishlist.netlify.app/", type: "live" },
+      { label: "Live Site", url: "https://destination26.netlify.app/", type: "live" },
       { label: "Project Demo (YouTube)", url: "https://youtu.be/v0AIn_vMeHM", type: "video" }
     ]
   },
