@@ -194,6 +194,17 @@ const Projects = () => {
                           Watch on YouTube
                         </a>
                       )}
+                      {"liveUrl" in project && project.liveUrl && (
+                        <a
+                          href={project.liveUrl as string}
+                          target="_blank"
+                          rel="noreferrer"
+                          className="text-primary hover:text-blue-700 transition flex items-center"
+                        >
+                          <FaGlobe className="mr-1" />
+                          Live Site
+                        </a>
+                      )}
                     </div>
                   </div>
                 </div>

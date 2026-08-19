@@ -65,7 +65,8 @@ export const projects = [
     imageUrl: "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80",
     technologies: ["React", "Tailwind CSS", "Framer Motion", "Responsive Design"],
     githubUrl: "https://github.com/Trxsta/Portfolio-2026",
-    demoUrl: null
+    demoUrl: null,
+    liveUrl: "https://goodwinswork.netlify.app/projects"
   }
 ];
 
@@ -219,18 +220,19 @@ export const uxUiProjects: ExtendedProject[] = [
     imageUrl: "https://images.unsplash.com/photo-1503220317375-aaad61436b1b?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80",
     technologies: ["Full-Stack", "API Development", "Database Integration", "QR Code"],
     links: [
-      { label: "Figma Hi-Fi Prototype", url: "https://www.figma.com/proto/yacjzEdcNV1Axgq28RVU4X/FLocal-Lo-fi?node-id=209-508&starting-point-node-id=209%3A508&t=J3PmwJ7bYuz9AWce-1", type: "figma" }
-    ],
-    badge: "In Development"
+      { label: "Figma Hi-Fi Prototype", url: "https://www.figma.com/proto/yacjzEdcNV1Axgq28RVU4X/FLocal-Lo-fi?node-id=209-508&starting-point-node-id=209%3A508&t=J3PmwJ7bYuz9AWce-1", type: "figma" },
+      { label: "GitHub Repository", url: "https://github.com/sburbank22/Explorlando", type: "github" }
+    ]
   },
   {
     id: 204,
-    title: "VR Application (In Progress)",
-    description: "Currently developing an immersive VR experience as part of coursework, focusing on interaction design and spatial user experiences.",
+    title: "Lively (Group Project)",
+    description: "Developed an AR application hi-fi prototype geared towards beginners who can have fun animating their illustrations and having them play in the real world.",
     imageUrl: "https://images.unsplash.com/photo-1478416272538-5f7e51dc5400?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80",
-    technologies: ["VR", "Interaction Design", "Spatial UX", "Coursework"],
-    links: [],
-    badge: "In Progress"
+    technologies: ["AR", "Figma", "UI/UX Design", "Prototyping"],
+    links: [
+      { label: "Figma Hi-Fi Prototype", url: "https://www.figma.com/proto/PpDJvloBRbl9b3aeX4FgJo/Lively-High-Fi?node-id=1-186&p=f&t=0DGD4A44eVUEeUa9-1&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=1%3A186&show-proto-sidebar=1", type: "figma" }
+    ]
   }
 ];
 
