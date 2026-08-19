@@ -115,7 +115,7 @@ export const socialLinks = {
 
 // ─── Extended project types for new sections ─────────────────────────────────
 
-export type LinkType = "github" | "live" | "video" | "figma" | "playlist";
+export type LinkType = "github" | "live" | "video" | "figma" | "playlist" | "instagram";
 
 export interface ProjectLink {
   label: string;
@@ -273,6 +273,21 @@ export const contentCreationProjects: ExtendedProject[] = [
     technologies: ["AI Voice Model", "Tone Accuracy", "Vocal Delivery", "Recent Work"],
     links: [
       { label: "Latest Model Example (YouTube)", url: "https://youtu.be/Eg9ceVGgv8A?si=_YlKFOFg65j08sJa", type: "video" }
+    ]
+  }
+];
+
+// ─── Creative Production ──────────────────────────────────────────────────────
+
+export const sungateProjects: ExtendedProject[] = [
+  {
+    id: 401,
+    title: "Sungate Music Group",
+    description: "An artist-first indie music marketing agency co-founded by Mariami. As an intern, I contribute to content production and editing, release strategies, shot-list ideation, app editing research, AI training, and marketing strategies across multiple artists.",
+    imageUrl: "https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80",
+    technologies: ["Content Production", "Music Marketing", "AI Training", "Release Strategy", "Video Editing"],
+    links: [
+      { label: "@sungatemusicgroup", url: "https://www.instagram.com/sungatemusicgroup/", type: "instagram" }
     ]
   }
 ];

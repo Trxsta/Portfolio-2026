@@ -1,6 +1,6 @@
 import { useLocation } from "wouter";
 import { motion } from "framer-motion";
-import { FaCode, FaExternalLinkAlt, FaYoutube, FaGlobe, FaListUl } from "react-icons/fa";
+import { FaCode, FaExternalLinkAlt, FaYoutube, FaGlobe, FaListUl, FaInstagram } from "react-icons/fa";
 import ScrollAnimation from "@/components/ui/scroll-animation";
 import {
   projects,
@@ -8,6 +8,7 @@ import {
   uxUiProjects,
   contentCreationProjects,
   creatorProfiles,
+  sungateProjects,
   type ExtendedProject,
   type LinkType,
 } from "@/lib/data";
@@ -20,8 +21,9 @@ const getLinkIcon = (type: LinkType) => {
     case "live":     return <FaGlobe className="mr-2 flex-shrink-0" />;
     case "video":    return <FaYoutube className="mr-2 flex-shrink-0" />;
     case "figma":    return <FaExternalLinkAlt className="mr-2 flex-shrink-0" />;
-    case "playlist": return <FaListUl className="mr-2 flex-shrink-0" />;
-    default:         return <FaExternalLinkAlt className="mr-2 flex-shrink-0" />;
+    case "playlist":   return <FaListUl className="mr-2 flex-shrink-0" />;
+    case "instagram":  return <FaInstagram className="mr-2 flex-shrink-0" />;
+    default:           return <FaExternalLinkAlt className="mr-2 flex-shrink-0" />;
   }
 };
 
@@ -291,6 +293,28 @@ const Projects = () => {
           {/* Projects Grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {contentCreationProjects.map((project, index) => (
+              <ExtendedProjectCard key={project.id} project={project} index={index} />
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── Section 5: Creative Production ──────────────────────────────── */}
+      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-gray-50">
+        <div className="max-w-7xl mx-auto">
+          <ScrollAnimation>
+            <SectionHeader
+              title="Creative Production"
+              subtitle="Real-world production experience spanning music marketing, content strategy, and creative direction."
+            />
+          </ScrollAnimation>
+
+          <ScrollAnimation>
+            <h3 className="text-lg font-semibold text-dark-400 mb-6">Sungate Internship Work</h3>
+          </ScrollAnimation>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {sungateProjects.map((project, index) => (
               <ExtendedProjectCard key={project.id} project={project} index={index} />
             ))}
           </div>
