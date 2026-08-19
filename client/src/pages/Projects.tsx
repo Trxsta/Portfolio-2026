@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useLocation } from "wouter";
 import { motion } from "framer-motion";
-import { FaCode, FaExternalLinkAlt, FaYoutube, FaGlobe, FaListUl, FaInstagram, FaPlay } from "react-icons/fa";
+import { FaCode, FaExternalLinkAlt, FaYoutube, FaGlobe, FaListUl, FaInstagram, FaPlay, FaChevronLeft, FaChevronRight } from "react-icons/fa";
 import ScrollAnimation from "@/components/ui/scroll-animation";
 import {
   projects,
@@ -10,7 +10,9 @@ import {
   contentCreationProjects,
   creatorProfiles,
   sungateProjects,
+  sungateCarousels,
   type ExtendedProject,
+  type InstagramCarousel,
   type LinkType,
 } from "@/lib/data";
 
@@ -94,6 +96,94 @@ const ExtendedProjectCard = ({ project, index }: { project: ExtendedProject; ind
               ))}
             </div>
           )}
+        </div>
+      </div>
+    </ScrollAnimation>
+  );
+};
+
+// ─── Instagram reel carousel card ────────────────────────────────────────────
+
+const InstagramCarouselCard = ({ card, index }: { card: InstagramCarousel; index: number }) => {
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [playing, setPlaying] = useState(false);
+
+  const prev = () => { setCurrentIndex(i => (i - 1 + card.reelIds.length) % card.reelIds.length); setPlaying(false); };
+  const next = () => { setCurrentIndex(i => (i + 1) % card.reelIds.length); setPlaying(false); };
+
+  return (
+    <ScrollAnimation delay={0.15 * (index % 3)}>
+      <div className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition duration-300">
+        {/* Media */}
+        <div className="relative">
+          {playing ? (
+            <iframe
+              src={`https://www.instagram.com/reel/${card.reelIds[currentIndex]}/embed/`}
+              className="w-full"
+              style={{ height: "500px", border: "none", overflow: "hidden" }}
+              allowFullScreen
+              title={`${card.title} – Reel ${currentIndex + 1}`}
+            />
+          ) : (
+            <div className="relative cursor-pointer group h-56" onClick={() => setPlaying(true)}>
+              <img src={card.imageUrl} alt={card.title} className="w-full h-full object-cover" />
+              <div className="absolute inset-0 bg-black/40 flex items-center justify-center group-hover:bg-black/50 transition">
+                <div className="w-16 h-16 bg-white/90 rounded-full flex items-center justify-center">
+                  <FaPlay className="text-primary text-xl ml-1" />
+                </div>
+              </div>
+            </div>
+          )}
+          {/* Dot indicators */}
+          <div className="absolute bottom-3 left-1/2 -translate-x-1/2 flex gap-2 z-10">
+            {card.reelIds.map((_, i) => (
+              <button
+                key={i}
+                onClick={() => { setCurrentIndex(i); setPlaying(false); }}
+                className={`w-2 h-2 rounded-full transition-all ${i === currentIndex ? "bg-white scale-125" : "bg-white/50"}`}
+              />
+            ))}
+          </div>
+        </div>
+
+        {/* Prev / counter / Next */}
+        <div className="flex items-center justify-between px-4 py-2 bg-gray-50 border-b border-gray-100">
+          <button onClick={prev} className="flex items-center gap-1 text-primary hover:text-blue-700 transition text-sm font-medium">
+            <FaChevronLeft className="text-xs" /> Prev
+          </button>
+          <span className="text-sm text-gray-500 font-medium">Clip {currentIndex + 1} of {card.reelIds.length}</span>
+          <button onClick={next} className="flex items-center gap-1 text-primary hover:text-blue-700 transition text-sm font-medium">
+            Next <FaChevronRight className="text-xs" />
+          </button>
+        </div>
+
+        {/* Content */}
+        <div className="p-6">
+          <h3 className="text-xl font-bold mb-2 text-dark-400">{card.title}</h3>
+          <p className="text-dark-200 mb-4">{card.description}</p>
+          <div className="flex flex-wrap gap-2 mb-4">
+            {card.technologies.map((tech, i) => (
+              <span key={i} className="tech-tag">{tech}</span>
+            ))}
+          </div>
+          <div className="flex flex-col gap-2">
+            <a
+              href={`https://www.instagram.com/reel/${card.reelIds[currentIndex]}/`}
+              target="_blank"
+              rel="noreferrer"
+              className="text-primary hover:text-blue-700 transition flex items-center text-sm"
+            >
+              <FaInstagram className="mr-2" /> View Current Reel on Instagram
+            </a>
+            <a
+              href={card.artistUrl}
+              target="_blank"
+              rel="noreferrer"
+              className="text-primary hover:text-blue-700 transition flex items-center text-sm"
+            >
+              <FaInstagram className="mr-2" /> {card.artistLabel}
+            </a>
+          </div>
         </div>
       </div>
     </ScrollAnimation>
@@ -340,9 +430,12 @@ const Projects = () => {
             <h3 className="text-lg font-semibold text-dark-400 mb-6">Sungate Internship Work</h3>
           </ScrollAnimation>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 items-start">
             {sungateProjects.map((project, index) => (
               <ExtendedProjectCard key={project.id} project={project} index={index} />
+            ))}
+            {sungateCarousels.map((carousel, index) => (
+              <InstagramCarouselCard key={carousel.id} card={carousel} index={sungateProjects.length + index} />
             ))}
           </div>
         </div>

@@ -303,3 +303,27 @@ export const sungateProjects: ExtendedProject[] = [
     ]
   }
 ];
+
+export interface InstagramCarousel {
+  id: number;
+  title: string;
+  description: string;
+  imageUrl: string;
+  technologies: string[];
+  reelIds: string[];
+  artistUrl: string;
+  artistLabel: string;
+}
+
+export const sungateCarousels: InstagramCarousel[] = [
+  {
+    id: 501,
+    title: "Ryan The Son Promotional Edits",
+    description: "A series of promotional video edits created for R&B/soul artist Ryan The Son during my Sungate internship — covering release promotion, visual storytelling, and social content strategy.",
+    imageUrl: "https://images.unsplash.com/photo-1514525253161-7a46d19cd819?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80",
+    technologies: ["Video Editing", "Content Strategy", "Instagram Reels", "Artist Promotion"],
+    reelIds: ["DRJFfzvDSJA", "DRCsl2bjU7a", "DQ7LfVEDs12", "DQPEE2sDbSE"],
+    artistUrl: "https://www.instagram.com/ryantheson/",
+    artistLabel: "Follow @ryantheson on Instagram"
+  }
+];
