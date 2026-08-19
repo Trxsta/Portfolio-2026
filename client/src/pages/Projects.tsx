@@ -1,6 +1,7 @@
+import { useState } from "react";
 import { useLocation } from "wouter";
 import { motion } from "framer-motion";
-import { FaCode, FaExternalLinkAlt, FaYoutube, FaGlobe, FaListUl, FaInstagram } from "react-icons/fa";
+import { FaCode, FaExternalLinkAlt, FaYoutube, FaGlobe, FaListUl, FaInstagram, FaPlay } from "react-icons/fa";
 import ScrollAnimation from "@/components/ui/scroll-animation";
 import {
   projects,
@@ -29,49 +30,75 @@ const getLinkIcon = (type: LinkType) => {
 
 // ─── Reusable card for new-style projects ────────────────────────────────────
 
-const ExtendedProjectCard = ({ project, index }: { project: ExtendedProject; index: number }) => (
-  <ScrollAnimation delay={0.15 * (index % 3)} className="h-full">
-    <div className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition duration-300 h-full flex flex-col">
-      <div className="relative">
-        <img
-          src={project.imageUrl}
-          alt={project.title}
-          className="w-full h-48 object-cover"
-        />
-        {project.badge && (
-          <span className="absolute top-3 right-3 bg-primary text-white text-xs font-semibold px-2 py-1 rounded-full">
-            {project.badge}
-          </span>
-        )}
-      </div>
-      <div className="p-6 flex-grow flex flex-col">
-        <h3 className="text-xl font-bold mb-2 text-dark-400">{project.title}</h3>
-        <p className="text-dark-200 mb-4 flex-grow">{project.description}</p>
-        <div className="flex flex-wrap gap-2 mb-4">
-          {project.technologies.map((tech, i) => (
-            <span key={i} className="tech-tag">{tech}</span>
-          ))}
+const ExtendedProjectCard = ({ project, index }: { project: ExtendedProject; index: number }) => {
+  const [reelPlaying, setReelPlaying] = useState(false);
+
+  return (
+    <ScrollAnimation delay={0.15 * (index % 3)} className="h-full">
+      <div className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition duration-300 h-full flex flex-col">
+        <div className="relative">
+          {project.instagramReelId && reelPlaying ? (
+            <iframe
+              src={`https://www.instagram.com/reel/${project.instagramReelId}/embed/`}
+              className="w-full"
+              style={{ height: "500px", border: "none", overflow: "hidden" }}
+              allowFullScreen
+              title={project.title}
+            />
+          ) : (
+            <div
+              className={project.instagramReelId ? "relative cursor-pointer group" : "relative"}
+              onClick={project.instagramReelId ? () => setReelPlaying(true) : undefined}
+            >
+              <img
+                src={project.imageUrl}
+                alt={project.title}
+                className="w-full h-48 object-cover"
+              />
+              {project.instagramReelId && (
+                <div className="absolute inset-0 bg-black/40 flex items-center justify-center group-hover:bg-black/50 transition">
+                  <div className="w-16 h-16 bg-white/90 rounded-full flex items-center justify-center">
+                    <FaPlay className="text-primary text-xl ml-1" />
+                  </div>
+                </div>
+              )}
+            </div>
+          )}
+          {project.badge && !reelPlaying && (
+            <span className="absolute top-3 right-3 bg-primary text-white text-xs font-semibold px-2 py-1 rounded-full">
+              {project.badge}
+            </span>
+          )}
         </div>
-        {project.links.length > 0 && (
-          <div className="flex flex-col gap-2 mt-auto">
-            {project.links.map((link, i) => (
-              <a
-                key={i}
-                href={link.url}
-                target="_blank"
-                rel="noreferrer"
-                className="text-primary hover:text-blue-700 transition flex items-center text-sm"
-              >
-                {getLinkIcon(link.type)}
-                {link.label}
-              </a>
+        <div className="p-6 flex-grow flex flex-col">
+          <h3 className="text-xl font-bold mb-2 text-dark-400">{project.title}</h3>
+          <p className="text-dark-200 mb-4 flex-grow">{project.description}</p>
+          <div className="flex flex-wrap gap-2 mb-4">
+            {project.technologies.map((tech, i) => (
+              <span key={i} className="tech-tag">{tech}</span>
             ))}
           </div>
-        )}
+          {project.links.length > 0 && (
+            <div className="flex flex-col gap-2 mt-auto">
+              {project.links.map((link, i) => (
+                <a
+                  key={i}
+                  href={link.url}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="text-primary hover:text-blue-700 transition flex items-center text-sm"
+                >
+                  {getLinkIcon(link.type)}
+                  {link.label}
+                </a>
+              ))}
+            </div>
+          )}
+        </div>
       </div>
-    </div>
-  </ScrollAnimation>
-);
+    </ScrollAnimation>
+  );
+};
 
 // ─── Section header with underline ───────────────────────────────────────────
 

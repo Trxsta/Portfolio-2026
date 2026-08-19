@@ -131,6 +131,7 @@ export interface ExtendedProject {
   technologies: string[];
   links: ProjectLink[];
   badge?: string;
+  instagramReelId?: string;
 }
 
 export interface CreatorProfile {
@@ -288,6 +289,17 @@ export const sungateProjects: ExtendedProject[] = [
     technologies: ["Content Production", "Music Marketing", "AI Training", "Release Strategy", "Video Editing"],
     links: [
       { label: "@sungatemusicgroup", url: "https://www.instagram.com/sungatemusicgroup/", type: "instagram" }
+    ]
+  },
+  {
+    id: 402,
+    title: "Music Marketing Advice Clip",
+    description: "A content clip produced during my Sungate internship — sharing music marketing insights as part of our strategy to grow artist presence and engagement on social media.",
+    imageUrl: "https://images.unsplash.com/photo-1598488035139-bdbb2231ce04?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80",
+    technologies: ["Instagram Reels", "Content Strategy", "Music Marketing", "Video Editing"],
+    instagramReelId: "DcJNaBQDZcY",
+    links: [
+      { label: "View on Instagram", url: "https://www.instagram.com/reel/DcJNaBQDZcY/", type: "instagram" }
     ]
   }
 ];
