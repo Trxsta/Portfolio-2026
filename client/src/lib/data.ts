@@ -34,7 +34,7 @@ export const projects = [
     id: 1,
     title: "Quiz App",
     description: "An interactive mobile quiz application built with React Native that allows users to test their knowledge on various topics with an intuitive user interface.",
-    imageUrl: "https://images.unsplash.com/photo-1606326608690-4e0281b1e588?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80",
+    imageUrl: "/thumbnails/quiz-app.jpg",
     technologies: ["React Native", "JavaScript", "Mobile Development", "UI/UX Design"],
     githubUrl: "https://github.com/Trxsta/react-native-quiz",
     demoUrl: "https://youtube.com/shorts/7uU6-IhycKg?feature=share",
@@ -44,7 +44,7 @@ export const projects = [
     id: 2,
     title: "Exercise Tracker",
     description: "A fitness application built with React Native that helps users track their workouts, set fitness goals, and monitor their progress over time.",
-    imageUrl: "https://images.unsplash.com/photo-1517836357463-d25dfeac3438?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80",
+    imageUrl: "/thumbnails/exercise-tracker.jpg",
     technologies: ["React Native", "JavaScript", "Health & Fitness API", "Mobile UI"],
     githubUrl: "https://github.com/Trxsta/exercise-tracker",
     demoUrl: "https://youtube.com/shorts/4RJafovJks8?feature=share",
@@ -54,7 +54,7 @@ export const projects = [
     id: 3,
     title: "TODO App Design Prototype",
     description: "A UI/UX design prototype created in Figma for a task management mobile application that helps users organize their daily activities and tasks.",
-    imageUrl: "https://images.unsplash.com/photo-1611224923853-80b023f02d71?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80",
+    imageUrl: "/thumbnails/todo-app.jpg",
     technologies: ["Figma", "UI/UX Design", "Prototyping", "Mobile Design"],
     githubUrl: null,
     demoUrl: null,
@@ -64,11 +64,11 @@ export const projects = [
     id: 4,
     title: "Portfolio Website",
     description: "A responsive portfolio website built with React and Tailwind CSS to showcase my projects, skills, and experience as a content creator and digital media specialist.",
-    imageUrl: "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80",
+    imageUrl: "/thumbnails/portfolio-site.jpg",
     technologies: ["React", "Tailwind CSS", "Framer Motion", "Responsive Design"],
     githubUrl: "https://github.com/Trxsta/Portfolio-2026",
     demoUrl: null,
-    liveUrl: "https://tristansport.netlify.app/projects"
+    liveUrl: "https://tgwinportfolio.netlify.app/projects"
   }
 ];
 
@@ -156,7 +156,7 @@ export const aiTrainingProjects: ExtendedProject[] = [
     id: 101,
     title: "Travel Wishlist Web App",
     description: "A full-stack travel wishlist web application built iteratively using AI-assisted development. Focused on backend integration, dynamic data handling, and responsive UI. Demonstrates structured prompting, debugging, and incremental feature development.",
-    imageUrl: "https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80",
+    imageUrl: "/thumbnails/travel-wishlist.jpg",
     technologies: ["Full-Stack", "AI-Assisted Development", "Responsive UI", "Backend Integration"],
     links: [
       { label: "GitHub Repository (Code + Transcripts)", url: "https://github.com/TrizJS/travel-wishlist", type: "github" },
@@ -168,7 +168,7 @@ export const aiTrainingProjects: ExtendedProject[] = [
     id: 102,
     title: "AI Training for Music Artist (Sungate Records Internship)",
     description: "Developed AI-generated visuals, voiceovers, and storytelling for the music artist \"De La Plata.\" Focused on refining prompt accuracy, visual consistency, and artist likeness using tools like Artlist and generative AI workflows.",
-    imageUrl: "https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80",
+    imageUrl: "/thumbnails/de-la-plata.jpg",
     technologies: ["Generative AI", "Visual Storytelling", "Artlist", "Prompt Engineering"],
     links: [
       { label: "Music Video (AI Visuals + Voiceover Work)", url: "https://youtu.be/466EzpaBcVI?si=zcscQd_ih3YBfEie", type: "video" }
@@ -178,7 +178,7 @@ export const aiTrainingProjects: ExtendedProject[] = [
     id: 104,
     title: "Thingz To Do",
     description: "A fully functional task management web app built from the ground up using AI-assisted development, based on the Figma TODO app prototype. Features task creation, deadlines, and a clean responsive UI — bringing the original design concept to life as a working product.",
-    imageUrl: "https://images.unsplash.com/photo-1611224923853-80b023f02d71?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80",
+    imageUrl: "/thumbnails/thingz-to-do.jpg",
     technologies: ["Full-Stack", "AI-Assisted Development", "Responsive UI", "Task Management"],
     links: [
       { label: "GitHub Repository", url: "https://github.com/Trxsta/TODO-App", type: "github" },
@@ -189,7 +189,7 @@ export const aiTrainingProjects: ExtendedProject[] = [
     id: 103,
     title: "Cozy Corner Cafe (AI + MCP Integration)",
     description: "An interactive restaurant menu web app built using iterative AI development. Integrated an MCP server to dynamically generate and manage copyright-free AI images. Focused on combining backend logic with AI-generated assets.",
-    imageUrl: "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80",
+    imageUrl: "/thumbnails/cozy-corner-cafe.jpg",
     technologies: ["MCP Server", "AI Image Generation", "Web App", "Backend Integration"],
     links: [
       { label: "GitHub Repository (Code + Transcripts)", url: "https://github.com/TrizJS/cozy-corner-cafe", type: "github" },
@@ -256,7 +256,7 @@ export const contentCreationProjects: ExtendedProject[] = [
     id: 301,
     title: "AI Training & Music Analysis",
     description: "Recreated full songs from short, low-quality snippets by analyzing vocals, pitch, and structure. Demonstrates advanced listening ability, vocal replication, and content optimization for audience growth.",
-    imageUrl: "https://images.unsplash.com/photo-1470225620780-dba8ba36b745?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80",
+    imageUrl: "/thumbnails/ai-training.jpg",
     technologies: ["AI Voice Training", "Music Analysis", "Vocal Replication", "Content Optimization"],
     links: [
       { label: "Recreated Song (YouTube)", url: "https://youtu.be/UxXuPwOkc2w", type: "video" },
@@ -268,7 +268,7 @@ export const contentCreationProjects: ExtendedProject[] = [
     id: 302,
     title: "UZICLONE AI Playlist",
     description: "A curated playlist showing progression of AI voice training over 2 years, highlighting improvements in realism and vocal modeling.",
-    imageUrl: "https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80",
+    imageUrl: "/thumbnails/uziclone-playlist.jpg",
     technologies: ["AI Voice Training", "Playlist Curation", "Vocal Modeling", "2-Year Progression"],
     links: [
       { label: "Full Playlist (YouTube)", url: "https://www.youtube.com/watch?v=npsH8BDdpOc&list=PLuXTkNpzKDnE7Erp-4bt8o8gsuaLdTk0-", type: "playlist" }
@@ -278,7 +278,7 @@ export const contentCreationProjects: ExtendedProject[] = [
     id: 303,
     title: "Advanced AI Voice Model (Recent Work)",
     description: "Showcases the most recent improvements in AI voice training, with enhanced realism, tone accuracy, and vocal delivery.",
-    imageUrl: "https://images.unsplash.com/photo-1516280440614-37939bbacd81?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80",
+    imageUrl: "/thumbnails/ai-voice-model.jpg",
     technologies: ["AI Voice Model", "Tone Accuracy", "Vocal Delivery", "Recent Work"],
     links: [
       { label: "Latest Model Example (YouTube)", url: "https://youtu.be/Eg9ceVGgv8A?si=_YlKFOFg65j08sJa", type: "video" }
@@ -293,7 +293,7 @@ export const sungateProjects: ExtendedProject[] = [
     id: 401,
     title: "Sungate Music Group",
     description: "An artist-first indie music marketing agency co-founded by Mariami. As an intern, I contribute to content production and editing, release strategies, shot-list ideation, app editing research, AI training, and marketing strategies across multiple artists.",
-    imageUrl: "https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80",
+    imageUrl: "/thumbnails/sungate-logo.jpg",
     technologies: ["Content Production", "Music Marketing", "AI Training", "Release Strategy", "Video Editing"],
     links: [
       { label: "@sungatemusicgroup", url: "https://www.instagram.com/sungatemusicgroup/", type: "instagram" }
@@ -303,7 +303,7 @@ export const sungateProjects: ExtendedProject[] = [
     id: 402,
     title: "Music Marketing Advice Clip",
     description: "A content clip produced during my Sungate internship — sharing music marketing insights as part of our strategy to grow artist presence and engagement on social media.",
-    imageUrl: "https://images.unsplash.com/photo-1598488035139-bdbb2231ce04?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80",
+    imageUrl: "/thumbnails/music-marketing-clip.jpg",
     technologies: ["Instagram Reels", "Content Strategy", "Music Marketing", "Video Editing"],
     instagramReelId: "DcJNaBQDZcY",
     links: [
@@ -328,7 +328,7 @@ export const sungateCarousels: InstagramCarousel[] = [
     id: 501,
     title: "Ryan The Son Promotional Edits",
     description: "A series of promotional video edits created for R&B/soul artist Ryan The Son during my Sungate internship — covering release promotion, visual storytelling, and social content strategy.",
-    imageUrl: "https://images.unsplash.com/photo-1514525253161-7a46d19cd819?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80",
+    imageUrl: "/thumbnails/ryan-the-son-1.jpg",
     technologies: ["Video Editing", "Content Strategy", "Instagram Reels", "Artist Promotion"],
     reelIds: ["DRJFfzvDSJA", "DRCsl2bjU7a", "DQ7LfVEDs12", "DQPEE2sDbSE"],
     artistUrl: "https://www.instagram.com/ryantheson/",

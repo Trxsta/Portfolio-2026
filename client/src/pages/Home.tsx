@@ -59,7 +59,7 @@ const Home = () => {
           >
             <button 
               onClick={() => navigate("/projects")}
-              className="inline-flex items-center px-8 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-primary hover:bg-blue-700 transition"
+              className="inline-flex items-center px-8 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-primary hover:bg-violet-700 transition"
             >
               View My Work
             </button>
@@ -161,7 +161,7 @@ const Home = () => {
                           href={project.githubUrl} 
                           target="_blank" 
                           rel="noreferrer" 
-                          className="text-primary hover:text-blue-700 transition flex items-center"
+                          className="text-primary hover:text-violet-800 transition flex items-center"
                         >
                           <FaCode className="mr-1" />
                           Code
@@ -172,7 +172,7 @@ const Home = () => {
                           href={project.demoUrl} 
                           target="_blank" 
                           rel="noreferrer" 
-                          className="text-primary hover:text-blue-700 transition flex items-center"
+                          className="text-primary hover:text-violet-800 transition flex items-center"
                         >
                           <FaExternalLinkAlt className="mr-1" />
                           Demo
@@ -188,7 +188,7 @@ const Home = () => {
             <ScrollAnimation delay={0.6}>
               <button 
                 onClick={() => navigate("/projects")}
-                className="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-primary hover:bg-blue-700 transition"
+                className="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-primary hover:bg-violet-700 transition"
               >
                 View All Projects
               </button>
@@ -213,7 +213,7 @@ const Home = () => {
             <div className="text-center">
               <button 
                 onClick={() => navigate("/contact")}
-                className="inline-flex items-center px-8 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-primary hover:bg-blue-700 transition"
+                className="inline-flex items-center px-8 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-primary hover:bg-violet-700 transition"
               >
                 Contact Me
               </button>

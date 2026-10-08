@@ -17,6 +17,28 @@
     --dark-300: #4b5563;
     --dark-400: #1f2937;
     --dark-500: #111827;
+
+    /* Brand palette: violet primary + gold accent */
+    --background: 0 0% 100%;
+    --foreground: 224 71% 4%;
+    --card: 0 0% 100%;
+    --card-foreground: 224 71% 4%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 224 71% 4%;
+    --primary: 262 83% 58%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 270 60% 96%;
+    --secondary-foreground: 262 60% 30%;
+    --muted: 270 40% 96%;
+    --muted-foreground: 220 9% 46%;
+    --accent: 46 75% 52%;
+    --accent-foreground: 35 40% 12%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 270 30% 90%;
+    --input: 270 30% 90%;
+    --ring: 262 83% 58%;
+    --radius: 0.5rem;
   }
 }
 
@@ -46,7 +68,7 @@
   }
 
   .skill-tag {
-    @apply px-3 py-1 bg-blue-100 text-primary rounded-full text-sm;
+    @apply px-3 py-1 bg-violet-100 text-primary rounded-full text-sm;
   }
 
   .tech-tag {
@@ -54,7 +76,7 @@
   }
 
   .social-icon-link {
-    @apply h-10 w-10 flex items-center justify-center rounded-full bg-blue-100 text-primary hover:bg-primary hover:text-white transition;
+    @apply h-10 w-10 flex items-center justify-center rounded-full bg-violet-100 text-primary hover:bg-primary hover:text-white transition;
   }
 
   .footer-link {
@@ -65,5 +87,5 @@
 .text-gradient {
   background-clip: text;
   -webkit-background-clip: text;
-  @apply bg-gradient-to-r from-primary to-blue-400 text-transparent;
+  @apply bg-gradient-to-r from-violet-600 to-amber-400 text-transparent;
 }

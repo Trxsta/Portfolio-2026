@@ -88,7 +88,7 @@ const ExtendedProjectCard = ({ project, index }: { project: ExtendedProject; ind
                   href={link.url}
                   target="_blank"
                   rel="noreferrer"
-                  className="text-primary hover:text-blue-700 transition flex items-center text-sm"
+                  className="text-primary hover:text-violet-800 transition flex items-center text-sm"
                 >
                   {getLinkIcon(link.type)}
                   {link.label}
@@ -148,11 +148,11 @@ const InstagramCarouselCard = ({ card, index }: { card: InstagramCarousel; index
 
         {/* Prev / counter / Next */}
         <div className="flex items-center justify-between px-4 py-2 bg-gray-50 border-b border-gray-100">
-          <button onClick={prev} className="flex items-center gap-1 text-primary hover:text-blue-700 transition text-sm font-medium">
+          <button onClick={prev} className="flex items-center gap-1 text-primary hover:text-violet-800 transition text-sm font-medium">
             <FaChevronLeft className="text-xs" /> Prev
           </button>
           <span className="text-sm text-gray-500 font-medium">Clip {currentIndex + 1} of {card.reelIds.length}</span>
-          <button onClick={next} className="flex items-center gap-1 text-primary hover:text-blue-700 transition text-sm font-medium">
+          <button onClick={next} className="flex items-center gap-1 text-primary hover:text-violet-800 transition text-sm font-medium">
             Next <FaChevronRight className="text-xs" />
           </button>
         </div>
@@ -171,7 +171,7 @@ const InstagramCarouselCard = ({ card, index }: { card: InstagramCarousel; index
               href={`https://www.instagram.com/reel/${card.reelIds[currentIndex]}/`}
               target="_blank"
               rel="noreferrer"
-              className="text-primary hover:text-blue-700 transition flex items-center text-sm"
+              className="text-primary hover:text-violet-800 transition flex items-center text-sm"
             >
               <FaInstagram className="mr-2" /> View Current Reel on Instagram
             </a>
@@ -179,7 +179,7 @@ const InstagramCarouselCard = ({ card, index }: { card: InstagramCarousel; index
               href={card.artistUrl}
               target="_blank"
               rel="noreferrer"
-              className="text-primary hover:text-blue-700 transition flex items-center text-sm"
+              className="text-primary hover:text-violet-800 transition flex items-center text-sm"
             >
               <FaInstagram className="mr-2" /> {card.artistLabel}
             </a>
@@ -192,13 +192,49 @@ const InstagramCarouselCard = ({ card, index }: { card: InstagramCarousel; index
 
 // ─── Section header with underline ───────────────────────────────────────────
 
-const SectionHeader = ({ title, subtitle }: { title: string; subtitle?: string }) => (
-  <div className="mb-10">
-    <h2 className="text-2xl md:text-3xl font-bold text-dark-400 mb-3">{title}</h2>
-    <div className="h-1 w-16 bg-primary rounded mb-4"></div>
-    {subtitle && <p className="text-dark-200 max-w-3xl">{subtitle}</p>}
-  </div>
-);
+type SectionTheme = "default" | "sungate" | "personal" | "ucf";
+
+const SectionHeader = ({
+  title,
+  subtitle,
+  theme = "default",
+}: {
+  title: string;
+  subtitle?: string;
+  theme?: SectionTheme;
+}) => {
+  const titleColor =
+    theme === "ucf"
+      ? "text-amber-300"
+      : theme === "sungate"
+        ? "text-orange-950"
+        : theme === "personal"
+          ? "text-violet-950"
+          : "text-dark-400";
+  const underline =
+    theme === "ucf"
+      ? "bg-amber-400"
+      : theme === "sungate"
+        ? "bg-gradient-to-r from-amber-500 to-orange-600"
+        : theme === "personal"
+          ? "bg-gradient-to-r from-violet-600 via-blue-500 to-amber-400"
+          : "bg-primary";
+  const subtitleColor =
+    theme === "ucf"
+      ? "text-neutral-300"
+      : theme === "sungate"
+        ? "text-orange-900/70"
+        : theme === "personal"
+          ? "text-violet-950/70"
+          : "text-dark-200";
+  return (
+    <div className="mb-10">
+      <h2 className={`text-2xl md:text-3xl font-bold ${titleColor} mb-3`}>{title}</h2>
+      <div className={`h-1 w-16 ${underline} rounded mb-4`}></div>
+      {subtitle && <p className={`${subtitleColor} max-w-3xl`}>{subtitle}</p>}
+    </div>
+  );
+};
 
 // ─── Page ─────────────────────────────────────────────────────────────────────
 
@@ -208,7 +244,7 @@ const Projects = () => {
   return (
     <>
       {/* ── Page Header ──────────────────────────────────────────────────── */}
-      <section className="bg-gradient-to-r from-primary to-blue-400 py-20 px-4 sm:px-6 lg:px-8">
+      <section className="bg-gradient-to-r from-violet-700 via-violet-600 to-amber-500 py-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto text-center">
           <motion.h1
             className="text-4xl md:text-5xl font-bold text-white mb-6"
@@ -236,17 +272,18 @@ const Projects = () => {
       </section>
 
       {/* ── Section 1: Creative Production ──────────────────────────────── */}
-      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-white">
+      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-amber-50 via-orange-50 to-amber-100">
         <div className="max-w-7xl mx-auto">
           <ScrollAnimation>
             <SectionHeader
               title="Creative Production"
               subtitle="Real-world production experience spanning music marketing, content strategy, and creative direction."
+              theme="sungate"
             />
           </ScrollAnimation>
 
           <ScrollAnimation>
-            <h3 className="text-lg font-semibold text-dark-400 mb-6">Sungate Internship Work</h3>
+            <h3 className="text-lg font-semibold text-orange-950 mb-6">Sungate Internship Work</h3>
           </ScrollAnimation>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 items-start">
@@ -261,14 +298,17 @@ const Projects = () => {
       </section>
 
       {/* ── Section 2: Content Creation & Music Production ──────────────── */}
-      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-gray-50">
+      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-violet-50 via-blue-50 to-amber-50">
         <div className="max-w-7xl mx-auto">
           <ScrollAnimation>
-            <SectionHeader title="Personal Projects: Content Creation & Music Production" />
+            <SectionHeader
+              title="Personal Projects: Content Creation & Music Production"
+              theme="personal"
+            />
           </ScrollAnimation>
 
           <ScrollAnimation>
-            <p className="text-dark-200 mb-8 max-w-3xl">
+            <p className="text-violet-950/70 mb-8 max-w-3xl">
               Self-taught in music analysis with hands-on experience in AI vocal training, content
               creation, SEO growth, and audience engagement. Developed a strong ear for vocal
               layering, pitch, and structure through years of creative experimentation and iterative
@@ -276,7 +316,7 @@ const Projects = () => {
             </p>
 
             {/* Featured Creator Channels */}
-            <h3 className="text-lg font-semibold text-dark-400 mb-4">Featured Channels</h3>
+            <h3 className="text-lg font-semibold text-violet-950 mb-4">Featured Channels</h3>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
               {creatorProfiles.map((creator) => (
                 <a
@@ -284,13 +324,13 @@ const Projects = () => {
                   href={creator.url}
                   target="_blank"
                   rel="noreferrer"
-                  className="flex items-center gap-4 bg-white rounded-lg shadow-md hover:shadow-lg transition duration-300 p-6 border-l-4 border-primary no-underline"
+                  className="flex items-center gap-4 bg-white rounded-lg shadow-md hover:shadow-lg transition duration-300 p-6 border-l-4 border-amber-400 no-underline"
                 >
                   <div className="w-12 h-12 bg-primary rounded-full flex items-center justify-center flex-shrink-0">
                     <FaYoutube className="text-white text-xl" />
                   </div>
                   <div className="flex-grow min-w-0">
-                    <h4 className="text-lg font-bold text-dark-400">{creator.name}</h4>
+                    <h4 className="text-lg font-bold text-violet-950">{creator.name}</h4>
                     <p className="text-xs text-primary font-medium mb-1">{creator.handle}</p>
                     <p className="text-dark-200 text-sm">{creator.description}</p>
                   </div>
@@ -344,23 +384,23 @@ const Projects = () => {
       </section>
 
       {/* ── Section 5: UCF Code & Design Projects ────────────────────────── */}
-      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-white">
+      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-neutral-950">
         <div className="max-w-7xl mx-auto">
           <ScrollAnimation>
-            <SectionHeader title="UCF Code & Design Projects (2023–2024)" />
+            <SectionHeader title="UCF Code & Design Projects (2023–2024)" theme="ucf" />
           </ScrollAnimation>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {projects.map((project, index) => (
               <ScrollAnimation key={project.id} delay={0.15 * (index % 3)} className="h-full">
-                <div className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition duration-300 h-full flex flex-col">
+                <div className="bg-neutral-900 rounded-lg shadow-md overflow-hidden hover:shadow-lg transition duration-300 h-full flex flex-col border border-amber-400/30">
                   <img
                     src={project.imageUrl}
                     alt={project.title}
                     className="w-full h-48 object-cover"
                   />
                   <div className="p-6 flex-grow flex flex-col">
-                    <h3 className="text-xl font-bold mb-2 text-dark-400">{project.title}</h3>
-                    <p className="text-dark-200 mb-4 flex-grow">{project.description}</p>
+                    <h3 className="text-xl font-bold mb-2 text-amber-100">{project.title}</h3>
+                    <p className="text-neutral-300 mb-4 flex-grow">{project.description}</p>
 
                     {/* YouTube Video Embed */}
                     {"videoId" in project && project.videoId && (
@@ -382,12 +422,12 @@ const Projects = () => {
                           href="/todo-app-design.pdf"
                           target="_blank"
                           rel="noreferrer"
-                          className="inline-flex items-center px-4 py-2 bg-primary text-white rounded-md hover:bg-blue-700 transition"
+                          className="inline-flex items-center px-4 py-2 bg-amber-400 text-neutral-950 font-medium rounded-md hover:bg-amber-300 transition"
                         >
                           <FaExternalLinkAlt className="mr-2" />
                           View TODO App Design PDF
                         </a>
-                        <p className="mt-2 text-sm text-gray-500 italic">
+                        <p className="mt-2 text-sm text-neutral-400 italic">
                           Design prototype created in Figma showing login, task list, and profile screens
                         </p>
                       </div>
@@ -395,7 +435,7 @@ const Projects = () => {
 
                     <div className="flex flex-wrap gap-2 mb-4">
                       {project.technologies.map((tech, techIndex) => (
-                        <span key={techIndex} className="tech-tag">{tech}</span>
+                        <span key={techIndex} className="px-2 py-1 bg-neutral-800 text-amber-200/90 rounded text-xs">{tech}</span>
                       ))}
                     </div>
                     <div className="flex space-x-3">
@@ -404,7 +444,7 @@ const Projects = () => {
                           href={project.githubUrl}
                           target="_blank"
                           rel="noreferrer"
-                          className="text-primary hover:text-blue-700 transition flex items-center"
+                          className="text-amber-400 hover:text-amber-300 transition flex items-center"
                         >
                           <FaCode className="mr-1" />
                           Code
@@ -415,7 +455,7 @@ const Projects = () => {
                           href={project.demoUrl}
                           target="_blank"
                           rel="noreferrer"
-                          className="text-primary hover:text-blue-700 transition flex items-center"
+                          className="text-amber-400 hover:text-amber-300 transition flex items-center"
                         >
                           <FaExternalLinkAlt className="mr-1" />
                           Watch on YouTube
@@ -426,7 +466,7 @@ const Projects = () => {
                           href={project.liveUrl as string}
                           target="_blank"
                           rel="noreferrer"
-                          className="text-primary hover:text-blue-700 transition flex items-center"
+                          className="text-amber-400 hover:text-amber-300 transition flex items-center"
                         >
                           <FaGlobe className="mr-1" />
                           Live Site
@@ -451,7 +491,7 @@ const Projects = () => {
             </p>
             <button
               onClick={() => navigate("/contact")}
-              className="inline-flex items-center px-8 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-primary hover:bg-blue-700 transition"
+              className="inline-flex items-center px-8 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-primary hover:bg-violet-700 transition"
             >
               Get In Touch
             </button>

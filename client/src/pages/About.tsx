@@ -6,7 +6,7 @@ const About = () => {
   return (
     <>
       {/* Header */}
-      <section className="bg-gradient-to-r from-primary to-blue-400 py-20 px-4 sm:px-6 lg:px-8">
+      <section className="bg-gradient-to-r from-violet-700 via-violet-600 to-amber-500 py-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto text-center">
           <motion.h1 
             className="text-4xl md:text-5xl font-bold text-white mb-6"
@@ -118,7 +118,7 @@ const About = () => {
                 {experience.map((job, index) => (
                   <ScrollAnimation key={index} delay={0.2 * index}>
                     <div className="border-l-4 border-primary pl-6 pb-6">
-                      <span className="inline-block px-3 py-1 bg-blue-100 text-primary text-sm rounded-full mb-2">
+                      <span className="inline-block px-3 py-1 bg-violet-100 text-primary text-sm rounded-full mb-2">
                         {job.period}
                       </span>
                       <h3 className="text-xl font-bold text-dark-400">{job.title}</h3>
@@ -141,7 +141,7 @@ const About = () => {
                 {education.map((edu, index) => (
                   <ScrollAnimation key={index} delay={0.2 * index}>
                     <div className="border-l-4 border-primary pl-6 pb-6">
-                      <span className="inline-block px-3 py-1 bg-blue-100 text-primary text-sm rounded-full mb-2">
+                      <span className="inline-block px-3 py-1 bg-violet-100 text-primary text-sm rounded-full mb-2">
                         {edu.period}
                       </span>
                       <h3 className="text-xl font-bold text-dark-400">{edu.degree}</h3>
