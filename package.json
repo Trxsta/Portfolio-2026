@@ -7,7 +7,9 @@
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
-    "check": "tsc"
+    "check": "tsc",
+    "prebuild": "node scripts/extract-thumbnails.mjs",
+    "predev": "node scripts/extract-thumbnails.mjs"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.9.1",
