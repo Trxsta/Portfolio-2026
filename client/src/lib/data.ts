@@ -1,29 +1,31 @@
 export const personalInfo = {
   name: "Tristan Goodwin",
-  headline: "Web Developer & Digital Media Specialist with a passion for creative design",
-  shortBio: "I'm a Digital Media student at UCF specializing in Interactive Web & Marketing. My technical skills in development complement my creative abilities, allowing me to create engaging, functional digital experiences that blend both artistic vision and technical execution.",
-  bio: "I'm a Digital Media student at UCF majoring in Interactive Web & Marketing. Over the past couple years, I've developed extensive technical skills to enhance my abilities as both a developer and creative designer. Starting with the fundamentals of HTML, CSS, and JavaScript, I've expanded my knowledge to include more advanced frameworks like React Native for creating interactive experiences. My expertise extends to both client-side and server-side development, including command line operations with Bash and PuTTy, Git version control, npm package management, and backend frameworks like PHP and Node.js. This comprehensive skill set allows me to bridge the gap between technical implementation and creative design, resulting in compelling digital experiences.",
-  interests: "When I'm not coding, I channel my creative energy into music production and brand design. I enjoy illustrating and developing story concepts for music projects, album artwork, and brand identity. I'm also an outdoor enthusiast and avid gamer. I stay current with emerging technology trends, particularly in AI and digital media, continuously seeking ways to integrate these innovations into my creative and technical work."
+  headline: "Digital Media Graduate & Content Creator crafting short-form video, social media, and visual stories",
+  shortBio: "I'm a UCF Digital Media graduate specializing in content production and visual storytelling. As a Digital Media Production Intern at Sungate Records, I produce short-form video, social media content, and music video edits for artists — blending platform-native strategy with motion design, typography, and brand-driven creativity.",
+  bio: "I'm a Digital Media graduate from UCF (B.A., Web & Interactive Media) working in content production. As a Digital Media Production Intern at Sungate Records, I create short-form video content, social media campaigns, and music video edits for artists — from concept and shot lists to editing, captions, and platform strategy. My toolkit centers on Premiere Pro, Photoshop, Illustrator, and Figma, with a strong feel for what performs on Reels, TikTok, and Shorts. I also bring web and UX skills (React, HTML/CSS, user research) that let me design and ship the pages and prototypes my content lives on.",
+  interests: "When I'm not editing, I channel my creative energy into music production and brand design. I enjoy illustrating and developing story concepts for music projects, album artwork, and brand identity. I'm also an outdoor enthusiast and avid gamer. I stay current with emerging technology trends, particularly in AI and digital media, continuously seeking ways to integrate these innovations into my creative and technical work."
 };
 
 export const skills = [
-  // Frontend
+  // Content & Design
+  "Premiere Pro",
+  "Photoshop",
+  "Illustrator",
+  "Canva",
+  "Figma",
+  "Short-Form Video",
+  "Motion Graphics",
+  "Social Media Strategy",
+  // Web
   "React.js",
   "JavaScript",
   "HTML/CSS",
-  "TypeScript",
   "Tailwind CSS",
-  "Expo",
-  // Backend
-  "Node.js",
-  "SQL",
-  "API Development",
-  "XAMPP",
+  "Responsive Design",
   // Tools & Others
   "Git",
   "GitHub",
   "VS Code",
-  "Responsive Design",
   "Bash"
 ];
 
@@ -61,16 +63,22 @@ export const projects = [
   {
     id: 4,
     title: "Portfolio Website",
-    description: "A responsive portfolio website built with React and Tailwind CSS to showcase my projects, skills, and experience as a web developer and digital media specialist.",
+    description: "A responsive portfolio website built with React and Tailwind CSS to showcase my projects, skills, and experience as a content creator and digital media specialist.",
     imageUrl: "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80",
     technologies: ["React", "Tailwind CSS", "Framer Motion", "Responsive Design"],
     githubUrl: "https://github.com/Trxsta/Portfolio-2026",
     demoUrl: null,
-    liveUrl: "https://goodwinswork.netlify.app/projects"
+    liveUrl: "https://tristansport.netlify.app/projects"
   }
 ];
 
 export const experience = [
+  {
+    title: "Digital Media Production Intern",
+    company: "Sungate Records (Remote)",
+    period: "2025 - Present",
+    description: "Produce and edit short-form video content (Reels, TikTok, Shorts) for music artists — captions, typography, visual effects, and formatting for engagement and brand consistency. Develop creative concepts, shot lists, and visual identities with artists; research platform trends and viral formats; implement performance-informed strategies to grow reach."
+  },
   {
     title: "Web Developer",
     company: "Freelance & Academic Projects",
@@ -87,10 +95,10 @@ export const experience = [
 
 export const education = [
   {
-    degree: "Digital Media - Interactive Web & Marketing",
+    degree: "B.A. Digital Media – Web & Interactive Media",
     institution: "University of Central Florida (UCF)",
-    period: "Current",
-    description: "Specializing in web development and marketing with a focus on creating interactive digital experiences. Developing skills in both creative design and technical implementation."
+    period: "2022 – 2026",
+    description: "Graduated Spring 2026 (GPA 3.71). Specialized in content production, visual communication, and interactive media — video fundamentals, social media & mass communication, digital imaging, and user-centered design."
   },
   {
     degree: "UI/UX Design Certificate",

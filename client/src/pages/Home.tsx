@@ -2,7 +2,18 @@ import { useLocation } from "wouter";
 import { motion } from "framer-motion";
 import { FaCode, FaExternalLinkAlt } from "react-icons/fa";
 import ScrollAnimation from "@/components/ui/scroll-animation";
-import { personalInfo, skills, projects } from "@/lib/data";
+import { personalInfo, skills, sungateProjects, contentCreationProjects } from "@/lib/data";
+
+// Featured work: lead with content production (what recruiters for media roles look for first)
+const featuredProjects: {
+  id: number;
+  title: string;
+  description: string;
+  imageUrl: string;
+  technologies: string[];
+  githubUrl?: string;
+  demoUrl?: string;
+}[] = [...sungateProjects.slice(0, 2), ...contentCreationProjects.slice(0, 1)];
 
 const Home = () => {
   const [, navigate] = useLocation();
@@ -109,8 +120,8 @@ const Home = () => {
             </ScrollAnimation>
             <ScrollAnimation className="order-1 lg:order-2" delay={0.4}>
               <img
-                src="https://images.unsplash.com/photo-1587620962725-abab7fe55159?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80"
-                alt="Developer coding"
+                src="https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80"
+                alt="Video production and content creation"
                 className="rounded-lg shadow-lg w-full h-auto object-cover"
               />
             </ScrollAnimation>
@@ -126,7 +137,7 @@ const Home = () => {
             <div className="page-title-underline"></div>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {projects.slice(0, 3).map((project, index) => (
+            {featuredProjects.map((project, index) => (
               <ScrollAnimation key={project.id} delay={0.2 * index} className="h-full">
                 <div className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition duration-300 h-full flex flex-col">
                   <img 

@@ -235,7 +235,115 @@ const Projects = () => {
         </div>
       </section>
 
-      {/* ── Section 1: UCF Code & Design Projects ────────────────────────── */}
+      {/* ── Section 1: Creative Production ──────────────────────────────── */}
+      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-white">
+        <div className="max-w-7xl mx-auto">
+          <ScrollAnimation>
+            <SectionHeader
+              title="Creative Production"
+              subtitle="Real-world production experience spanning music marketing, content strategy, and creative direction."
+            />
+          </ScrollAnimation>
+
+          <ScrollAnimation>
+            <h3 className="text-lg font-semibold text-dark-400 mb-6">Sungate Internship Work</h3>
+          </ScrollAnimation>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 items-start">
+            {sungateProjects.map((project, index) => (
+              <ExtendedProjectCard key={project.id} project={project} index={index} />
+            ))}
+            {sungateCarousels.map((carousel, index) => (
+              <InstagramCarouselCard key={carousel.id} card={carousel} index={sungateProjects.length + index} />
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── Section 2: Content Creation & Music Production ──────────────── */}
+      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-gray-50">
+        <div className="max-w-7xl mx-auto">
+          <ScrollAnimation>
+            <SectionHeader title="Personal Projects: Content Creation & Music Production" />
+          </ScrollAnimation>
+
+          <ScrollAnimation>
+            <p className="text-dark-200 mb-8 max-w-3xl">
+              Self-taught in music analysis with hands-on experience in AI vocal training, content
+              creation, SEO growth, and audience engagement. Developed a strong ear for vocal
+              layering, pitch, and structure through years of creative experimentation and iterative
+              AI refinement.
+            </p>
+
+            {/* Featured Creator Channels */}
+            <h3 className="text-lg font-semibold text-dark-400 mb-4">Featured Channels</h3>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
+              {creatorProfiles.map((creator) => (
+                <a
+                  key={creator.name}
+                  href={creator.url}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="flex items-center gap-4 bg-white rounded-lg shadow-md hover:shadow-lg transition duration-300 p-6 border-l-4 border-primary no-underline"
+                >
+                  <div className="w-12 h-12 bg-primary rounded-full flex items-center justify-center flex-shrink-0">
+                    <FaYoutube className="text-white text-xl" />
+                  </div>
+                  <div className="flex-grow min-w-0">
+                    <h4 className="text-lg font-bold text-dark-400">{creator.name}</h4>
+                    <p className="text-xs text-primary font-medium mb-1">{creator.handle}</p>
+                    <p className="text-dark-200 text-sm">{creator.description}</p>
+                  </div>
+                  <FaExternalLinkAlt className="text-gray-400 flex-shrink-0" />
+                </a>
+              ))}
+            </div>
+          </ScrollAnimation>
+
+          {/* Projects Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {contentCreationProjects.map((project, index) => (
+              <ExtendedProjectCard key={project.id} project={project} index={index} />
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── Section 3: UX/UI Research & Immersive Development ───────────── */}
+      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-white">
+        <div className="max-w-7xl mx-auto">
+          <ScrollAnimation>
+            <SectionHeader
+              title="UX/UI Research & Immersive Development (2025–Present)"
+              subtitle="Combining user research methodologies with immersive technologies — from Figma prototypes shaped by real user feedback to AR and VR experiences in active development."
+            />
+          </ScrollAnimation>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {uxUiProjects.map((project, index) => (
+              <ExtendedProjectCard key={project.id} project={project} index={index} />
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── Section 4: Iterative AI Training Projects ────────────────────── */}
+      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-gray-50">
+        <div className="max-w-7xl mx-auto">
+          <ScrollAnimation>
+            <SectionHeader
+              title="Iterative AI Training Projects"
+              subtitle="Projects built using iterative prompting, AI-assisted workflows, and real-world experimentation — emphasizing structured development, debugging, and incremental feature growth."
+            />
+          </ScrollAnimation>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {aiTrainingProjects.map((project, index) => (
+              <ExtendedProjectCard key={project.id} project={project} index={index} />
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── Section 5: UCF Code & Design Projects ────────────────────────── */}
       <section className="py-16 px-4 sm:px-6 lg:px-8 bg-white">
         <div className="max-w-7xl mx-auto">
           <ScrollAnimation>
@@ -328,114 +436,6 @@ const Projects = () => {
                   </div>
                 </div>
               </ScrollAnimation>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ── Section 2: Iterative AI Training Projects ────────────────────── */}
-      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-gray-50">
-        <div className="max-w-7xl mx-auto">
-          <ScrollAnimation>
-            <SectionHeader
-              title="Iterative AI Training Projects"
-              subtitle="Projects built using iterative prompting, AI-assisted workflows, and real-world experimentation — emphasizing structured development, debugging, and incremental feature growth."
-            />
-          </ScrollAnimation>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {aiTrainingProjects.map((project, index) => (
-              <ExtendedProjectCard key={project.id} project={project} index={index} />
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ── Section 3: UX/UI Research & Immersive Development ───────────── */}
-      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-white">
-        <div className="max-w-7xl mx-auto">
-          <ScrollAnimation>
-            <SectionHeader
-              title="UX/UI Research & Immersive Development (2025–Present)"
-              subtitle="Combining user research methodologies with immersive technologies — from Figma prototypes shaped by real user feedback to AR and VR experiences in active development."
-            />
-          </ScrollAnimation>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {uxUiProjects.map((project, index) => (
-              <ExtendedProjectCard key={project.id} project={project} index={index} />
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ── Section 4: Content Creation & Music Production ──────────────── */}
-      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-gray-50">
-        <div className="max-w-7xl mx-auto">
-          <ScrollAnimation>
-            <SectionHeader title="Personal Projects: Content Creation & Music Production" />
-          </ScrollAnimation>
-
-          <ScrollAnimation>
-            <p className="text-dark-200 mb-8 max-w-3xl">
-              Self-taught in music analysis with hands-on experience in AI vocal training, content
-              creation, SEO growth, and audience engagement. Developed a strong ear for vocal
-              layering, pitch, and structure through years of creative experimentation and iterative
-              AI refinement.
-            </p>
-
-            {/* Featured Creator Channels */}
-            <h3 className="text-lg font-semibold text-dark-400 mb-4">Featured Channels</h3>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
-              {creatorProfiles.map((creator) => (
-                <a
-                  key={creator.name}
-                  href={creator.url}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="flex items-center gap-4 bg-white rounded-lg shadow-md hover:shadow-lg transition duration-300 p-6 border-l-4 border-primary no-underline"
-                >
-                  <div className="w-12 h-12 bg-primary rounded-full flex items-center justify-center flex-shrink-0">
-                    <FaYoutube className="text-white text-xl" />
-                  </div>
-                  <div className="flex-grow min-w-0">
-                    <h4 className="text-lg font-bold text-dark-400">{creator.name}</h4>
-                    <p className="text-xs text-primary font-medium mb-1">{creator.handle}</p>
-                    <p className="text-dark-200 text-sm">{creator.description}</p>
-                  </div>
-                  <FaExternalLinkAlt className="text-gray-400 flex-shrink-0" />
-                </a>
-              ))}
-            </div>
-          </ScrollAnimation>
-
-          {/* Projects Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {contentCreationProjects.map((project, index) => (
-              <ExtendedProjectCard key={project.id} project={project} index={index} />
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ── Section 5: Creative Production ──────────────────────────────── */}
-      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-gray-50">
-        <div className="max-w-7xl mx-auto">
-          <ScrollAnimation>
-            <SectionHeader
-              title="Creative Production"
-              subtitle="Real-world production experience spanning music marketing, content strategy, and creative direction."
-            />
-          </ScrollAnimation>
-
-          <ScrollAnimation>
-            <h3 className="text-lg font-semibold text-dark-400 mb-6">Sungate Internship Work</h3>
-          </ScrollAnimation>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 items-start">
-            {sungateProjects.map((project, index) => (
-              <ExtendedProjectCard key={project.id} project={project} index={index} />
-            ))}
-            {sungateCarousels.map((carousel, index) => (
-              <InstagramCarouselCard key={carousel.id} card={carousel} index={sungateProjects.length + index} />
             ))}
           </div>
         </div>
